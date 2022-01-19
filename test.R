@@ -5,6 +5,6 @@ message("Found ", nrow(pkgs), " packages for ", testrepo)
 tryCatch({
   as.numeric_version(pkgs[,'Version'])
 }, error = function(e){
-  tail(pkgs)
+  print(tail(pkgs))
   stop(e)
 })
