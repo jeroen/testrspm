@@ -4,6 +4,7 @@ pkgs <- available.packages(repos = testrepo)
 message("Found ", nrow(pkgs), " packages for ", testrepo)
 tryCatch({
   as.numeric_version(pkgs[,'Version'])
+  'OK'
 }, error = function(e){
   print(tail(pkgs))
   stop(e)
